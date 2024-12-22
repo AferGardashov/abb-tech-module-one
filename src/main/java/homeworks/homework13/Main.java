@@ -1,15 +1,11 @@
 package homeworks.homework13;
 
-import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class Main {
 
-    CyclicBarrier barrier = new CyclicBarrier(2);
+    private CyclicBarrier barrier = new CyclicBarrier(2);
+
     private int count;
 
     public static void main(String[] args) {
@@ -32,6 +28,7 @@ public class Main {
         new Thread(runnable).start();
     }
 
+    //TASK 2
     public void print() {
         for (int i = 1; i < 9; i++) {
             try {
@@ -43,6 +40,7 @@ public class Main {
         }
     }
 
+    //TASK 1
     public void increment() {
         System.out.println(++count);
     }
